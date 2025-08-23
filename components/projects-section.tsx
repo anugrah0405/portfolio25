@@ -19,7 +19,7 @@ const projects = [
     description: "A responsive e-commerce website showcasing traditional Bastar Dhokra Art products with modern web technologies",
     icon: <ShoppingCart className="h-8 w-8" />,
     color: "from-green-500/20 to-lime-500/20",
-    link: "https://bastar-dhokra-art.vercel.app/",
+    link: "https://bastar-dhokra-art-main.vercel.app/",
   },
   {
     id: 3,
@@ -67,7 +67,7 @@ export default function ProjectsSection() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [visibleDots, setVisibleDots] = useState(projects.length)
   const sectionRef = useRef(null)
-  const scrollRef = useRef(null)
+  const scrollRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
 
   // Calculate the number of dots based on screen size
@@ -114,13 +114,14 @@ export default function ProjectsSection() {
     },
   }
 
-  const scrollToIndex = (index) => {
+  //for dot indicators
+  const scrollToIndex = (index: number) => {
     setActiveIndex(index)
     if (scrollRef.current) {
       const container = scrollRef.current
       const items = container.querySelectorAll(".project-card")
       if (items[index]) {
-        const itemWidth = items[0].offsetWidth
+        const itemWidth = (items[0] as HTMLElement).offsetWidth
         const scrollPosition = index * itemWidth
         container.scrollTo({
           left: scrollPosition,
@@ -134,7 +135,8 @@ export default function ProjectsSection() {
     if (scrollRef.current) {
       const container = scrollRef.current
       const scrollPosition = container.scrollLeft
-      const itemWidth = container.querySelector(".project-card")?.offsetWidth || 0
+      const item = container.querySelector(".project-card") as HTMLElement | null
+      const itemWidth = item?.offsetWidth || 0
 
       if (itemWidth > 0) {
         const newIndex = Math.round(scrollPosition / itemWidth)
