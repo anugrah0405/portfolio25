@@ -2,16 +2,16 @@
 
 import { useState, useRef, useEffect } from "react"
 import { motion, useInView } from "framer-motion"
-import { MessageSquareMore, ShoppingCart, Clapperboard, CloudSun, Library, ClipboardPlus, Gamepad2 } from "lucide-react"
+import { ListTodo, MessageSquareMore, ShoppingCart, Clapperboard, CloudSun, Library, ClipboardPlus, Gamepad2 } from "lucide-react"
 
 const projects = [
   {
     id: 1,
-    title: "REAL TIME CHAT APP",
-    description: "A real-time chat application built with React for the frontend and Node.js with Express and Socket.IO for the backend.",
-    icon: <MessageSquareMore className="h-8 w-8" />,
-    color: "from-purple-500/20 to-pink-500/20",
-    link: "https://github.com/anugrah0405/real-time-chat-app",
+    title: "Task Tracker Pro",
+    description: "A modern, feature-rich task management application with robust user authentication and database persistence.",
+    icon: <ListTodo className="h-8 w-8" />,
+    color: "from-red-500/20 to-fuchsia-500/20",
+    link: "https://tasktrackerpro.onrender.com",
   },
   {
     id: 2,
@@ -23,6 +23,14 @@ const projects = [
   },
   {
     id: 3,
+    title: "REAL TIME CHAT APP",
+    description: "A real-time chat application built with React for the frontend and Node.js with Express and Socket.IO for the backend.",
+    icon: <MessageSquareMore className="h-8 w-8" />,
+    color: "from-purple-500/20 to-pink-500/20",
+    link: "https://github.com/anugrah0405/real-time-chat-app",
+  },
+  {
+    id: 4,
     title: "IMDB REPLICA",
     description: "A simple React app that fetches movie data from the O-MDb API. Users can search for movies, view details like ratings, release year, and box office collections, and save favorites.",
     icon: <Clapperboard className="h-8 w-8" />,
@@ -30,7 +38,7 @@ const projects = [
     link: "https://imdb-replica.vercel.app/",
   },
   {
-    id: 4,
+    id: 5,
     title: "WEATHER APP",
     description: "A responsive React-based weather application that provides current weather conditions and a 5-day forecast for any city, utilizing the OpenWeatherMap API.",
     icon: <CloudSun className="h-8 w-8" />,
@@ -38,7 +46,7 @@ const projects = [
     link: "https://weather-app-pi-rouge-50.vercel.app/",
   },
   {
-    id: 5,
+    id: 6,
     title: "LIBRARY MANAGEMENT SYSTEM",
     description: "A Library Management System Project using Spring Boot, Spring Data JPA (Hibernate), and MySQL database.",
     icon: <Library className="h-8 w-8" />,
@@ -46,7 +54,7 @@ const projects = [
     link: "https://example.com/library",
   },
   {
-    id: 6,
+    id: 7,
     title: "KNEE ARTHRITIS WEBSITE",
     description: "A Python-based system design project for detecting and quantifying knee osteoarthritis and its severity.",
     icon: <ClipboardPlus className="h-8 w-8" />,
@@ -54,7 +62,7 @@ const projects = [
     link: "https://example.com/space",
   },
   {
-    id: 7,
+    id: 8,
     title: "SNAKE GAME",
     description: "A sleek, fast-paced Snake game with responsive controls and real-time score tracking!",
     icon: <Gamepad2 className="h-8 w-8" />,
